@@ -311,7 +311,60 @@ a {
 }
 
 /* ==========================================================
-   10. HANDY-ANSICHT
+   10. FOTOS
+   ========================================================== */
+figure {
+  margin: 0; /* Browser geben <figure> sonst einen Rand */
+}
+
+/* Bilder passen sich immer der verfügbaren Breite an */
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+/* Begrüßung: Text links, Foto rechts */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.hero-photo img {
+  aspect-ratio: 4 / 5;    /* Hochformat-Ausschnitt */
+  object-fit: cover;       /* füllt den Rahmen, ohne zu verzerren */
+  object-position: 50% 50%;
+}
+
+/* Radsport: Foto links, Zeitleiste rechts */
+.radsport-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.race-photo {
+  position: sticky; /* Foto bleibt beim Scrollen durch die Zeitleiste sichtbar */
+  top: 6rem;
+}
+
+/* Breites Foto zwischen Radsport und Interessen */
+.photo-banner {
+  margin-top: 5.5rem;
+}
+
+.photo-banner img {
+  aspect-ratio: 2 / 1;     /* breites Format */
+  object-fit: cover;
+  object-position: 50% 70%;
+}
+
+/* ==========================================================
+   11. HANDY-ANSICHT
    Alles hier drin gilt nur für Bildschirme bis 700px Breite.
    ========================================================== */
 @media (max-width: 700px) {
@@ -344,5 +397,30 @@ a {
 
   .contact-links {
     flex-direction: column;
+  }
+
+  /* Fotos und Text untereinander statt nebeneinander */
+  .hero-grid,
+  .radsport-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .race-photo {
+    position: static;
+  }
+
+  .race-photo img {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 50% 30%;
+  }
+
+  .photo-banner {
+    margin-top: 3.75rem;
+  }
+
+  .photo-banner img {
+    aspect-ratio: 4 / 3; /* auf dem Handy weniger flach */
   }
 }
