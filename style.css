@@ -261,7 +261,67 @@ a {
 }
 
 /* ==========================================================
-   8. KONTAKT
+   8. ERFAHRUNG (Liste & Hinweis-Kästen)
+   ========================================================== */
+.list-title {
+  margin-top: 2.5rem;
+  color: var(--anthrazit);
+}
+
+/* Liste mit kleinen Haken statt Punkten */
+.checklist {
+  list-style: none;
+  margin: 0 0 2.5rem;
+  padding: 0;
+}
+
+.checklist li {
+  position: relative;
+  padding: 0.5rem 0 0.5rem 2rem;
+  border-bottom: 1px solid #dfe2d4;
+}
+
+.checklist li:last-child {
+  border-bottom: none;
+}
+
+.checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 0.2rem;
+  top: 0.5rem;
+  font-weight: 700;
+  color: var(--oliv);
+}
+
+/* zwei Kästen untereinander */
+.notes {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.note {
+  background: var(--weiss);
+  border-left: 4px solid var(--oliv);
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+}
+
+.note-parents {
+  border-left-color: var(--braun);
+}
+
+.note h3 {
+  font-size: 1.1rem;
+}
+
+.note p {
+  margin: 0;
+  color: var(--grau);
+}
+
+/* ==========================================================
+   9. KONTAKT
    ========================================================== */
 .section-dark {
   background: var(--anthrazit);
@@ -297,7 +357,7 @@ a {
 }
 
 /* ==========================================================
-   9. FUSSZEILE
+   10. FUSSZEILE
    ========================================================== */
 .site-footer {
   padding: 1.5rem 0;
@@ -311,7 +371,7 @@ a {
 }
 
 /* ==========================================================
-   10. FOTOS
+   11. FOTOS
    ========================================================== */
 figure {
   margin: 0; /* Browser geben <figure> sonst einen Rand */
@@ -364,7 +424,7 @@ figure img {
 }
 
 /* ==========================================================
-   11. HANDY-ANSICHT
+   12. HANDY-ANSICHT
    Alles hier drin gilt nur für Bildschirme bis 700px Breite.
    ========================================================== */
 @media (max-width: 700px) {
