@@ -409,6 +409,26 @@ figure img {
   top: 6rem;
 }
 
+/* Erfahrung: Text links, Foto rechts */
+.erfahrung-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.erfahrung-photo {
+  grid-column: 2;   /* rechte Spalte … */
+  grid-row: 1;      /* … neben dem Text */
+  position: sticky; /* bleibt beim Scrollen sichtbar */
+  top: 6rem;
+}
+
+.erfahrung-content {
+  grid-column: 1;
+  grid-row: 1;
+}
+
 /* Breites Foto zwischen Radsport und Kontakt */
 .photo-banner {
   margin-bottom: 5.5rem; /* Abstand zum Kontakt-Bereich */
@@ -458,13 +478,28 @@ figure img {
 
   /* Fotos und Text untereinander statt nebeneinander */
   .hero-grid,
-  .radsport-grid {
+  .radsport-grid,
+  .erfahrung-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
 
-  .race-photo {
+  .race-photo,
+  .erfahrung-photo {
     position: static;
+  }
+
+  /* auf dem Handy: Foto über dem Text */
+  .erfahrung-photo,
+  .erfahrung-content {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .erfahrung-photo img {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 50% 35%;
   }
 
   .race-photo img {
