@@ -117,8 +117,34 @@ a {
   font-size: 0.95rem;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--oliv);
+}
+
+/* Die Linie unter dem aktiven Menüpunkt.
+   Position und Breite setzt script.js beim Scrollen. */
+nav {
+  position: relative;
+}
+
+.nav-indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--oliv);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s ease, width 0.35s ease, opacity 0.25s ease;
+}
+
+/* Beim Klick auf einen Menüpunkt landet die Überschrift
+   unter dem festen Menü statt dahinter */
+section[id] {
+  scroll-margin-top: 5rem;
 }
 
 /* ==========================================================
@@ -412,6 +438,10 @@ figure img {
 
   .nav-links a {
     font-size: 0.9rem;
+  }
+
+  section[id] {
+    scroll-margin-top: 6rem; /* Menü ist auf dem Handy etwas höher */
   }
 
   .hero {
