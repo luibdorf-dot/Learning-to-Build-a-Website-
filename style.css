@@ -232,36 +232,7 @@ a {
 }
 
 /* ==========================================================
-   7. INTERESSEN-KARTEN
-   ========================================================== */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 Spalten nebeneinander */
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.card {
-  border: 1px solid #e6e6e1;
-  border-top: 4px solid var(--oliv);
-  border-radius: 12px;
-  padding: 1.75rem;
-  background: var(--weiss);
-}
-
-.card-icon {
-  font-size: 1.8rem;
-  display: block;
-  margin-bottom: 0.75rem;
-}
-
-.card p {
-  color: var(--grau);
-  margin: 0;
-}
-
-/* ==========================================================
-   8. ERFAHRUNG (Liste & Hinweis-Kästen)
+   7. ERFAHRUNG (Liste & Hinweis-Kästen)
    ========================================================== */
 .list-title {
   margin-top: 2.5rem;
@@ -321,7 +292,7 @@ a {
 }
 
 /* ==========================================================
-   9. KONTAKT
+   8. KONTAKT
    ========================================================== */
 .section-dark {
   background: var(--anthrazit);
@@ -357,7 +328,7 @@ a {
 }
 
 /* ==========================================================
-   10. FUSSZEILE
+   9. FUSSZEILE
    ========================================================== */
 .site-footer {
   padding: 1.5rem 0;
@@ -371,7 +342,7 @@ a {
 }
 
 /* ==========================================================
-   11. FOTOS
+   10. FOTOS
    ========================================================== */
 figure {
   margin: 0; /* Browser geben <figure> sonst einen Rand */
@@ -412,9 +383,9 @@ figure img {
   top: 6rem;
 }
 
-/* Breites Foto zwischen Radsport und Interessen */
+/* Breites Foto zwischen Radsport und Kontakt */
 .photo-banner {
-  margin-top: 5.5rem;
+  margin-bottom: 5.5rem; /* Abstand zum Kontakt-Bereich */
 }
 
 .photo-banner img {
@@ -424,7 +395,7 @@ figure img {
 }
 
 /* ==========================================================
-   12. HANDY-ANSICHT
+   11. HANDY-ANSICHT
    Alles hier drin gilt nur für Bildschirme bis 700px Breite.
    ========================================================== */
 @media (max-width: 700px) {
@@ -451,10 +422,6 @@ figure img {
     padding: 3.75rem 0;
   }
 
-  .cards {
-    grid-template-columns: 1fr; /* Karten untereinander statt nebeneinander */
-  }
-
   .contact-links {
     flex-direction: column;
   }
@@ -477,7 +444,7 @@ figure img {
   }
 
   .photo-banner {
-    margin-top: 3.75rem;
+    margin-bottom: 3.75rem;
   }
 
   .photo-banner img {
